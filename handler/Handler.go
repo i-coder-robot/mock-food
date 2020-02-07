@@ -1,10 +1,12 @@
 package handler
 
 import (
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/i-coder-robot/mock-food/model"
 	"io/ioutil"
 	"net/http"
+	"os"
 )
 
 func IndexHandler(c *gin.Context)          {}
@@ -81,6 +83,13 @@ func NavHandler(c *gin.Context) {
 }
 func ImageHandler(c *gin.Context) {
 	imageName := c.Query("imageName")
-	file, _ := ioutil.ReadFile("/static/"+imageName)
+	dir, _ := os.Getwd()
+	println(dir)
+	//exPath := filepath.Dir(dir)
+	//println(exPath)
+	file, ok := ioutil.ReadFile(dir+"/static/"+imageName+".png")
+	if ok!=nil {
+		fmt.Println(ok.Error())
+	}
 	c.Writer.WriteString(string(file))
 }
