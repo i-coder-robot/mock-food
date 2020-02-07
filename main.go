@@ -12,4 +12,6 @@ func main() {
 	r.GET("/food",handler.GoodFoodHandler)
 	r.GET("/restaurant",handler.GoodRestaurantHandler)
 	r.GET("/me",handler.MeHandler)
+	r.GET("/image",handler.ImageHandler)
+	r.Run()
 }
