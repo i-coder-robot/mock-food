@@ -8,6 +8,7 @@ import (
 func main() {
 	r := gin.Default()
 	r.GET("/index",handler.IndexHandler)
+	r.GET("/nav",handler.NavHandler)
 	r.GET("/food",handler.GoodFoodHandler)
 	r.GET("/restaurant",handler.GoodRestaurantHandler)
 	r.GET("/me",handler.MeHandler)
