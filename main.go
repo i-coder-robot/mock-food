@@ -17,6 +17,7 @@ func main() {
 	r.GET("/nav",handler.NavHandler)
 	r.GET("/subNav",handler.SubNavHandler)
 	r.GET("/team",handler.TeamHandler)
+	r.GET("/rush",handler.RushHandler)
 
 	r.Run()
 }
