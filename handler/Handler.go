@@ -12,7 +12,73 @@ import (
 const domain = "http://localhost:8080"
 
 func IndexHandler(c *gin.Context)          {}
-func GoodFoodHandler(c *gin.Context)       {}
+
+func DiscountLeftHandler(c *gin.Context) {
+	items:= []model.DiscountModel{
+		{
+			Id:"ae0181a5-a87e-4c5e-bdea-0a078fa13b6e",
+			DiscountItemIcon:domain + "/image?imageName=icon",
+			DiscountItemSrc:domain + "/image?imageName=goods003",
+			DiscountItemHotel:"熹炭炉端烧酒",
+			DiscountItemGoodsPrice: 104,
+			DiscountItemPrice:208,
+			Discount:"5折",
+
+		}, {
+			Id:"bb9f6780-fbdf-4f71-8636-a8f10d3df1b6",
+			DiscountItemIcon:domain + "/image?imageName=icon",
+			DiscountItemSrc:domain + "/image?imageName=goods004",
+			DiscountItemHotel:"伊藤野菜村",
+			DiscountItemGoodsPrice: 79,
+			DiscountItemPrice:168,
+			Discount:"5折",
+
+		}, {
+			Id:"bb1d56d8-f391-42cf-8266-e733e77d524c",
+			DiscountItemSrc:domain + "/image?imageName=goods005",
+			DiscountItemTitle:"仅79元！价值168元的午时女生半价自助，提供免提供免提供免提供免提供免提供免提供免提供免",
+			DiscountItemIcon: domain + "/image?imageName=icon",
+			DiscountItemHotel:"伊藤野菜村",
+			DiscountItemGoodsPrice: 79,
+			DiscountItemPrice:168,
+			Discount:"5折",
+
+		},
+	}
+
+	c.JSON(http.StatusOK,gin.H{
+		"items": items,
+	})
+}
+
+func DiscountRightHandler(c *gin.Context) {
+	items := []model.DiscountModel{
+		model.DiscountModel{
+			Id:"0ed02e4e-f612-4bff-ab54-e8201b97379a",
+			DiscountItemSrc:domain + "/image?imageName=goods001",
+			DiscountItemTitle:"仅79元！价值168元的午时女生半价自助，提供免提供免提供免提供免提供免提供免提供免提供免",
+			DiscountItemIcon:domain + "/image?imageName=icon",
+			DiscountItemHotel:"伊藤野菜村",
+			DiscountItemGoodsPrice: 79,
+			DiscountItemPrice:168,
+			Discount:"5折",
+    },
+		model.DiscountModel{
+			Id:"ae0181a5-a87e-4c5e-bdea-0a078fa13b6e",
+			DiscountItemSrc:domain + "/image?imageName=goods002",
+			DiscountItemTitle: "仅79元！价值168元的午时女生半价自助，提供免提供免提供免提供免提供免提供免提供免提供免",
+			DiscountItemIcon:domain + "/image?imageName=icon",
+			DiscountItemHotel:"熹炭炉端烧酒",
+			DiscountItemGoodsPrice: 79,
+			DiscountItemPrice:168,
+			Discount:"5折",
+		},
+	}
+	c.JSON(http.StatusOK,gin.H{
+		"items":items,
+	})
+}
+
 func GoodRestaurantHandler(c *gin.Context) {}
 func MeHandler(c *gin.Context)             {}
 
