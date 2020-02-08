@@ -7,5 +7,5 @@ type GuessItem struct {
 	Desc      string `json:"desc"`
 	GoodPrice string `json:"goodPrice"`
 	Price     string `json:"price"`
-	SoldNum   string `json:"soldNum"`
+	SoldNum   int32 `json:"soldNum"`
 }

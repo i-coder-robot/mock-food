@@ -18,6 +18,6 @@ func main() {
 	r.GET("/subNav",handler.SubNavHandler)
 	r.GET("/team",handler.TeamHandler)
 	r.GET("/rush",handler.RushHandler)
-
+	r.GET("/guess",handler.GuessHandler)
 	r.Run()
 }
