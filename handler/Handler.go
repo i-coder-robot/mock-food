@@ -67,44 +67,44 @@ func SubNavHandler(c *gin.Context) {
 	items := []model.IndexNavItem{
 		model.IndexNavItem{
 			Id: "b9a936d5-8cfd-4b9f-8057-abc14a8b99d7",
-			Src: domain+"/image?imageName=miaosha.png",
+			Src: domain+"/image?imageName=miaosha",
 			Title: "限时秒杀",
   },model.IndexNavItem{
 			Id: "49a8d7be-bcb2-45ad-b333-5489823af088",
-			Src: domain+"/image?imageName=huoguo.png",
+			Src: domain+"/image?imageName=huoguo",
 			Title: "火锅",
   },model.IndexNavItem{
 			Id:"703909c0-07df-4d63-9b16-cdad3d5feb24",
-			Src: domain+"/image?imageName=minsu.png",
+			Src: domain+"/image?imageName=minsu",
 			Title:"民宿",
   },
 		model.IndexNavItem{
 			Id:"fab30bcf-842a-419a-b6be-ae2ea74ee49b",
-			Src: domain+"/image?imageName=hair.png",
+			Src: domain+"/image?imageName=hair",
 			Title:"美发",
     },model.IndexNavItem{
 			Id:"6f78b854-7473-4656-aaf7-9a92ef6aa95f",
-			Src: domain+"/image?imageName=health.png",
+			Src: domain+"/image?imageName=health",
 			Title:"按摩/足疗",
     },model.IndexNavItem{
 			Id:"8a5c1877-deac-4ff1-bab1-8e7138ddd3ed",
-			Src: domain+"/image?imageName=bath.png",
+			Src: domain+"/image?imageName=bath",
 			Title:"洗浴汗蒸",
     },model.IndexNavItem{
 			Id:"30286152-1c1f-49af-96ff-33c8fe361fdf",
-			Src: domain+"/image?imageName=sports.png",
+			Src: domain+"/image?imageName=sports",
 			Title:"运动健身",
     },model.IndexNavItem{
 			Id:"5efbad00-ebcd-4c41-aaea-65c023b5f45e",
-			Src: domain+"/image?imageName=edu.png",
+			Src: domain+"/image?imageName=edu",
 			Title:"教育培训",
     },model.IndexNavItem{
 			Id:"5de3967a-0fbe-4d68-8d54-d2e49ec2aec8",
-			Src: domain+"/image?imageName=vote.png",
+			Src: domain+"/image?imageName=vote",
 			Title:"聚餐投票",
     },model.IndexNavItem{
 			Id:"c7464890-c961-4af7-954d-b6845e0b4364",
-			Src: domain+"/image?imageName=all-small.png",
+			Src: domain+"/image?imageName=all-small",
 			Title:"全部",
     },
 	};
