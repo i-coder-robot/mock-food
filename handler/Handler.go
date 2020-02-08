@@ -117,6 +117,39 @@ func SubNavHandler(c *gin.Context) {
 
 func TeamHandler(c *gin.Context) {
 
+	item := model.TeamModel{
+		TeamHead:      "超",
+		TeamHead1:     "值",
+		TeamHead2:     "拼",
+		TeamHead3:     "团",
+		TeamImg:       "http://localhost:8080/image?imageName=niuroumian",
+		FoodName:      "牛肉面",
+		TeamIcon:      "http://localhost:8080/image?imageName=icon",
+		TeamHotelName: "丰瑞餐厅",
+		TeamPersons:   "2人团",
+		TeamPrice:     "5.4",
+		Price:         "9",
+	}
+	c.JSON(http.StatusOK, gin.H{"item": item})
+}
+
+func RushHandler(c *gin.Context) {
+
+	item := model.TeamModel{
+		TeamHead:      "限",
+		TeamHead1:     "时",
+		TeamHead2:     "秒",
+		TeamHead3:     "杀",
+		TeamImg:       "http://localhost:8080/image?imageName=rush",
+		FoodName:      "肥牛丼套餐1份",
+		TeamIcon:      "http://localhost:8080/image?imageName=icon",
+		TeamHotelName: "熊吞大碗丼",
+		TeamPersons:   "2人团",
+		TeamPrice:     "32.8",
+		Price:         "68",
+		Distance:      "<100m",
+	}
+	c.JSON(http.StatusOK, gin.H{"item": item})
 }
 
 func ImageHandler(c *gin.Context) {

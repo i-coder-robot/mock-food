@@ -12,4 +12,5 @@ type TeamModel struct {
 	TeamPersons string `json:"teamPersons"`
 	TeamPrice string `json:"teamPrice"`
 	Price string `json:"price"`
+	Distance string `json:"distance"`
 }
