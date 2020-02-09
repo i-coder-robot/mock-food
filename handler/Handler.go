@@ -11,42 +11,39 @@ import (
 
 const domain = "http://localhost:8080"
 
-func IndexHandler(c *gin.Context)          {}
+func IndexHandler(c *gin.Context) {}
 
 func DiscountLeftHandler(c *gin.Context) {
-	items:= []model.DiscountModel{
+	items := []model.DiscountModel{
 		{
-			Id:"ae0181a5-a87e-4c5e-bdea-0a078fa13b6e",
-			DiscountItemIcon:domain + "/image?imageName=icon",
-			DiscountItemSrc:domain + "/image?imageName=goods003",
-			DiscountItemHotel:"熹炭炉端烧酒",
+			Id:                     "ae0181a5-a87e-4c5e-bdea-0a078fa13b6e",
+			DiscountItemIcon:       domain + "/image?imageName=icon",
+			DiscountItemSrc:        domain + "/image?imageName=goods003",
+			DiscountItemHotel:      "熹炭炉端烧酒",
 			DiscountItemGoodsPrice: 104,
-			DiscountItemPrice:208,
-			Discount:"5折",
-
+			DiscountItemPrice:      208,
+			Discount:               "5折",
 		}, {
-			Id:"bb9f6780-fbdf-4f71-8636-a8f10d3df1b6",
-			DiscountItemIcon:domain + "/image?imageName=icon",
-			DiscountItemSrc:domain + "/image?imageName=goods004",
-			DiscountItemHotel:"伊藤野菜村",
+			Id:                     "bb9f6780-fbdf-4f71-8636-a8f10d3df1b6",
+			DiscountItemIcon:       domain + "/image?imageName=icon",
+			DiscountItemSrc:        domain + "/image?imageName=goods004",
+			DiscountItemHotel:      "伊藤野菜村",
 			DiscountItemGoodsPrice: 79,
-			DiscountItemPrice:168,
-			Discount:"5折",
-
+			DiscountItemPrice:      168,
+			Discount:               "5折",
 		}, {
-			Id:"bb1d56d8-f391-42cf-8266-e733e77d524c",
-			DiscountItemSrc:domain + "/image?imageName=goods005",
-			DiscountItemTitle:"仅79元！价值168元的午时女生半价自助，提供免提供免提供免提供免提供免提供免提供免提供免",
-			DiscountItemIcon: domain + "/image?imageName=icon",
-			DiscountItemHotel:"伊藤野菜村",
+			Id:                     "bb1d56d8-f391-42cf-8266-e733e77d524c",
+			DiscountItemSrc:        domain + "/image?imageName=goods005",
+			DiscountItemTitle:      "仅79元！价值168元的午时女生半价自助，提供免提供免提供免提供免提供免提供免提供免提供免",
+			DiscountItemIcon:       domain + "/image?imageName=icon",
+			DiscountItemHotel:      "伊藤野菜村",
 			DiscountItemGoodsPrice: 79,
-			DiscountItemPrice:168,
-			Discount:"5折",
-
+			DiscountItemPrice:      168,
+			Discount:               "5折",
 		},
 	}
 
-	c.JSON(http.StatusOK,gin.H{
+	c.JSON(http.StatusOK, gin.H{
 		"items": items,
 	})
 }
@@ -54,33 +51,132 @@ func DiscountLeftHandler(c *gin.Context) {
 func DiscountRightHandler(c *gin.Context) {
 	items := []model.DiscountModel{
 		model.DiscountModel{
-			Id:"0ed02e4e-f612-4bff-ab54-e8201b97379a",
-			DiscountItemSrc:domain + "/image?imageName=goods001",
-			DiscountItemTitle:"仅79元！价值168元的午时女生半价自助，提供免提供免提供免提供免提供免提供免提供免提供免",
-			DiscountItemIcon:domain + "/image?imageName=icon",
-			DiscountItemHotel:"伊藤野菜村",
+			Id:                     "0ed02e4e-f612-4bff-ab54-e8201b97379a",
+			DiscountItemSrc:        domain + "/image?imageName=goods001",
+			DiscountItemTitle:      "仅79元！价值168元的午时女生半价自助，提供免提供免提供免提供免提供免提供免提供免提供免",
+			DiscountItemIcon:       domain + "/image?imageName=icon",
+			DiscountItemHotel:      "伊藤野菜村",
 			DiscountItemGoodsPrice: 79,
-			DiscountItemPrice:168,
-			Discount:"5折",
-    },
-		model.DiscountModel{
-			Id:"ae0181a5-a87e-4c5e-bdea-0a078fa13b6e",
-			DiscountItemSrc:domain + "/image?imageName=goods002",
-			DiscountItemTitle: "仅79元！价值168元的午时女生半价自助，提供免提供免提供免提供免提供免提供免提供免提供免",
-			DiscountItemIcon:domain + "/image?imageName=icon",
-			DiscountItemHotel:"熹炭炉端烧酒",
-			DiscountItemGoodsPrice: 79,
-			DiscountItemPrice:168,
-			Discount:"5折",
+			DiscountItemPrice:      168,
+			Discount:               "5折",
 		},
+		model.DiscountModel{
+			Id:                     "ae0181a5-a87e-4c5e-bdea-0a078fa13b6e",
+			DiscountItemSrc:        domain + "/image?imageName=goods002",
+			DiscountItemTitle:      "仅79元！价值168元的午时女生半价自助，提供免提供免提供免提供免提供免提供免提供免提供免",
+			DiscountItemIcon:       domain + "/image?imageName=icon",
+			DiscountItemHotel:      "熹炭炉端烧酒",
+			DiscountItemGoodsPrice: 79,
+			DiscountItemPrice:      168,
+			Discount:               "5折",
+		},
+	}
+	c.JSON(http.StatusOK, gin.H{
+		"items": items,
+	})
+}
+
+func GoodRestaurantNavHandler(c *gin.Context) {
+	items := []model.GoodRestaurantBillBoard{
+		{
+			Id:    "adafef98-570b-425e-8581-435496d05ec6",
+			Title: "热门榜",
+			Desc:  "全城火热",
+			Src:   domain + "/image?imageName=good_restrant001",
+		},
+		{
+			Id:    "0872d59b-3975-47a4-a939-ea609f770b19",
+			Title: "评价榜",
+			Desc:  "吃货都爱",
+			Src:   domain + "/image?imageName=good_restrant_huoguo",
+		},
+		{
+			Id:    "99ddd79c-d649-4ef7-adb2-43f689029d13",
+			Title: "口味榜",
+			Desc:  "舌尖盛宴",
+			Src:   domain + "/image?imageName=tiandian",
+		},
+		{
+			Id:    "504ec4b1-2680-4274-a792-9bb4433d8aad",
+			Title: "小吃快餐榜",
+			Desc:  "博大精深",
+			Src:   domain + "/image?imageName=jiangzhe",
+		},
+		{
+			Id:    "507ea105-6f50-41a5-9f93-7b7111e7c9d1",
+			Title: "面包甜点榜",
+			Desc:  "色味具佳",
+			Src:   domain + "/image?imageName=xiaochi",
+		},
+		{
+			Id:    "e596f743-4de7-42fe-97c8-875345477424",
+			Title: "火锅榜",
+			Desc:  "酣畅淋漓",
+			Src:   domain + "/image?imageName=hanguo",
+		},
+	}
+	c.JSON(http.StatusOK, gin.H{
+		"items": items,
+	})
+}
+
+func GoodRestaurantBillBoardHandler(c *gin.Context) {
+	items := []model.GoodRestaurantNavModel{
+		{
+			Id:    "564541c5-f801-4f31-8a07-fe471996d582",
+			Src:   domain + "/image?imageName=xiang",
+			Title: "必吃榜",
+			Desc:  "106家餐厅上榜",
+		}, {
+			Id:    "059b58eb-d6bf-4f7a-9ed2-8de6d899fee6",
+			Src:   domain + "/image?imageName=ribencai",
+			Title: "网红店榜",
+			Desc:  "150家商户上榜",
+		}, {
+			Id:    "739d0505-cf56-4ee1-ac54-562890da1949",
+			Src:   domain + "/image?imageNamedongbei",
+			Title: "黑珍珠",
+			Desc:  "20家餐厅上榜",
+		},
+	}
+	c.JSON(http.StatusOK, gin.H{
+		"items": items,
+	})
+}
+
+func GoodRestaurantTabItemHandler(c *gin.Context)  {
+	items:=[]model.GoodRestaurantTabItem{
+		{
+			Id:"7cd08b80-172b-4859-a5b5-4108ef616387",
+			Src:"002",
+			Title:"小吊梨汤(德隆店)",
+			Star:5,
+			Price:"￥89/人",
+			Area:"天通苑",
+			Type:"京菜",
+			Desc:"昌平区北京菜热门榜第2名",
+			Team:"小吊梨汤必吃套餐，建议2人使用形式形式形式",
+			Quan:"100元工作日代金券1张,100元工作日代金券1张",
+      },
+		{
+			Id:"2b13711f-c97e-4465-86b0-245aa46e3e15",
+			Src:"good_restrant002",
+			Title:"开杠钵钵鸡 冒鸭血(右安门店)",
+			Star:4.5,
+			Price:"￥54/人",
+			Area:"开阳里",
+			Type:"小吃快餐",
+			Desc:"开阳里小吃快餐热门榜第2名",
+			Team:"",
+			Quan:"",
+      },
 	}
 	c.JSON(http.StatusOK,gin.H{
 		"items":items,
 	})
 }
 
-func GoodRestaurantHandler(c *gin.Context) {}
-func MeHandler(c *gin.Context)             {}
+func MeHandler(c *gin.Context) {}
 
 func NavHandler(c *gin.Context) {
 	items := []model.IndexNavItem{
