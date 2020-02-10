@@ -19,6 +19,7 @@ func DiscountLeftHandler(c *gin.Context) {
 			Id:                     "ae0181a5-a87e-4c5e-bdea-0a078fa13b6e",
 			DiscountItemIcon:       domain + "/image?imageName=icon",
 			DiscountItemSrc:        domain + "/image?imageName=goods003",
+			DiscountItemTitle:      "仅79元！价值168元的午时女生半价自助，提供免提供免提供免提供免提供免提供免提供免提供免",
 			DiscountItemHotel:      "熹炭炉端烧酒",
 			DiscountItemGoodsPrice: 104,
 			DiscountItemPrice:      208,
@@ -27,6 +28,7 @@ func DiscountLeftHandler(c *gin.Context) {
 			Id:                     "bb9f6780-fbdf-4f71-8636-a8f10d3df1b6",
 			DiscountItemIcon:       domain + "/image?imageName=icon",
 			DiscountItemSrc:        domain + "/image?imageName=goods004",
+			DiscountItemTitle:      "仅79元！价值168元的午时女生半价自助，提供免提供免提供免提供免提供免提供免提供免提供免",
 			DiscountItemHotel:      "伊藤野菜村",
 			DiscountItemGoodsPrice: 79,
 			DiscountItemPrice:      168,
@@ -134,7 +136,7 @@ func GoodRestaurantBillBoardHandler(c *gin.Context) {
 			Desc:  "150家商户上榜",
 		}, {
 			Id:    "739d0505-cf56-4ee1-ac54-562890da1949",
-			Src:   domain + "/image?imageNamedongbei",
+			Src:   domain + "/image?imageName=dongbei",
 			Title: "黑珍珠",
 			Desc:  "20家餐厅上榜",
 		},
@@ -144,49 +146,100 @@ func GoodRestaurantBillBoardHandler(c *gin.Context) {
 	})
 }
 
-func GoodRestaurantTabItemHandler(c *gin.Context)  {
-	items:=[]model.GoodRestaurantTabItem{
+func GoodRestaurantTabItemHandler(c *gin.Context) {
+	items := []model.GoodRestaurantTabItem{
 		{
-			Id:"7cd08b80-172b-4859-a5b5-4108ef616387",
-			Src:"002",
-			Title:"小吊梨汤(德隆店)",
-			Star:5,
-			Price:"￥89/人",
-			Area:"天通苑",
-			Type:"京菜",
-			Desc:"昌平区北京菜热门榜第2名",
-			Team:"小吊梨汤必吃套餐，建议2人使用形式形式形式",
-			Quan:"100元工作日代金券1张,100元工作日代金券1张",
-      },
+			Id:    "7cd08b80-172b-4859-a5b5-4108ef616387",
+			Src:   domain + "/image?imageName=002",
+			Title: "小吊梨汤(德隆店)",
+			Star:  5,
+			Price: "￥89/人",
+			Area:  "天通苑",
+			Type:  "京菜",
+			Desc:  "昌平区北京菜热门榜第2名",
+			Team:  "小吊梨汤必吃套餐，建议2人使用形式形式形式",
+			Quan:  "100元工作日代金券1张,100元工作日代金券1张",
+		},
 		{
-			Id:"2b13711f-c97e-4465-86b0-245aa46e3e15",
-			Src:"good_restrant002",
-			Title:"开杠钵钵鸡 冒鸭血(右安门店)",
-			Star:4.5,
-			Price:"￥54/人",
-			Area:"开阳里",
-			Type:"小吃快餐",
-			Desc:"开阳里小吃快餐热门榜第2名",
-			Team:"",
-			Quan:"",
-      },
+			Id:    "2b13711f-c97e-4465-86b0-245aa46e3e15",
+			Src:   domain + "/image?imageName=good_restrant002",
+			Title: "开杠钵钵鸡 冒鸭血(右安门店)",
+			Star:  4.5,
+			Price: "￥54/人",
+			Area:  "开阳里",
+			Type:  "小吃快餐",
+			Desc:  "开阳里小吃快餐热门榜第2名",
+			Team:  "",
+			Quan:  "",
+		},
 	}
-	c.JSON(http.StatusOK,gin.H{
-		"items":items,
+	c.JSON(http.StatusOK, gin.H{
+		"items": items,
 	})
 }
 
-func MeHandler(c *gin.Context) {}
+func MeHandler(c *gin.Context) {
+	items1 := []model.Me{
+		{
+			Id:    "1ff2d71a-b523-434a-9d98-6f39f6eaa3d5",
+			Src:   domain + "/image?imageName=me001",
+			Title: "待付款",
+		}, {
+			Id:    "16172c9d-b859-488d-8557-7226d3686095",
+			Src:   domain + "/image?imageName=me002",
+			Title: "可使用",
+		}, {
+			Id:    "aa586b1d-8113-4392-abf0-2d7c01ec2132",
+			Src:   domain + "/image?imageName=me003",
+			Title: "退款/售后",
+		}, {
+			Id:    "9c281e08-9851-45a7-9384-10b0e1b26a99",
+			Src:   domain + "/image?imageName=me004",
+			Title: "全部订单",
+		},
+	}
+
+	items2 := []model.Me{
+		{
+			Id:    "71a003c2-1dd5-4929-aa62-7358e69445e3",
+			Src:   domain + "/image?imageName=me005",
+			Title: "领券中心",
+		}, {
+			Id:    "cd5ea1ed-3543-423b-a473-14edf615f719",
+			Src:   domain + "/image?imageName=me006",
+			Title: "今天吃啥",
+		}, {
+			Id:    "a24c9321-a855-4eae-82e9-1473c24a46c6",
+			Src:   domain + "/image?imageName=me007",
+			Title: "聚餐投票",
+		}, {
+			Id:    "1b8425a7-1904-458c-83de-b48c622f3d12",
+			Src:   domain + "/image?imageName=me008",
+			Title: "贡献信息",
+		},
+	}
+	items := model.Items{
+		Items1: items1,
+		Items2: items2,
+		HeadPic:domain + "/image?imageName=headPic",
+		Profile:domain + "/image?imageName=profile",
+		MyCode:domain + "/image?imageName=myCode",
+		Arrow:domain + "/image?imageName=arrow",
+	}
+	c.JSON(http.StatusOK, gin.H{
+		"items": items,
+	})
+}
 
 func NavHandler(c *gin.Context) {
 	items := []model.IndexNavItem{
 		model.IndexNavItem{
 			Id:    "26cd5373-7709-468e-aa89-34ddcac20b3d",
-			Src:   domain + "/image?imageName=meishidatu",
+			Src:   domain + "/image?imageName=meishIdatu",
 			Title: "美食",
 		}, model.IndexNavItem{
 			Id:    "ab36ffb0-4c6c-4d6f-8ed5-20840896d496",
-			Src:   domain + "/image?imageName=waimaidatu",
+			Src:   domain + "/image?imageName=waimaIdatu",
 			Title: "美团外卖",
 		}, model.IndexNavItem{
 			Id:    "547b2627-b107-45ef-b144-257a1f8bbc8d",
@@ -353,7 +406,7 @@ func ImageHandler(c *gin.Context) {
 	println(dir)
 	//exPath := filepath.Dir(dir)
 	//println(exPath)
-	file, ok := ioutil.ReadFile(dir + "/static/IndexNav/" + imageName + ".png")
+	file, ok := ioutil.ReadFile(dir + "/static/images/" + imageName + ".png")
 	if ok != nil {
 		fmt.Println(ok.Error())
 	}

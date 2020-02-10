@@ -10,7 +10,7 @@ func main() {
 	r.GET("/index",handler.IndexHandler)
 	r.GET("/discountLeft",handler.DiscountLeftHandler)
 	r.GET("/discountRight",handler.DiscountRightHandler)
-	r.GET("/me",handler.MeHandler)
+
 	r.GET("/image",handler.ImageHandler)
 
 
@@ -22,8 +22,10 @@ func main() {
 	r.GET("/guess",handler.GuessHandler)
 
 	r.GET("/restaurantNav",handler.GoodRestaurantNavHandler)
-	r.GET("/restaurantBillBoard",handler.GoodRestaurantNavHandler)
+	r.GET("/restaurantBillBoard",handler.GoodRestaurantBillBoardHandler)
 	r.GET("/restaurantTabItem",handler.GoodRestaurantTabItemHandler)
+
+	r.GET("/me",handler.MeHandler)
 
 	r.Run()
 }
