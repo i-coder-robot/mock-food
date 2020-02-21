@@ -9,7 +9,7 @@ import (
 	"os"
 )
 
-const domain = "http://localhost:8080"
+const domain = "http://192.168.0.104:8080"
 
 func IndexHandler(c *gin.Context) {}
 
@@ -219,12 +219,12 @@ func MeHandler(c *gin.Context) {
 		},
 	}
 	items := model.Items{
-		Items1: items1,
-		Items2: items2,
-		HeadPic:domain + "/image?imageName=headPic",
-		Profile:domain + "/image?imageName=profile",
-		MyCode:domain + "/image?imageName=myCode",
-		Arrow:domain + "/image?imageName=arrow",
+		Items1:  items1,
+		Items2:  items2,
+		HeadPic: domain + "/image?imageName=headPic",
+		Profile: domain + "/image?imageName=profile",
+		MyCode:  domain + "/image?imageName=myCode",
+		Arrow:   domain + "/image?imageName=arrow",
 	}
 	c.JSON(http.StatusOK, gin.H{
 		"items": items,
@@ -337,9 +337,9 @@ func TeamHandler(c *gin.Context) {
 		TeamHead1:     "值",
 		TeamHead2:     "拼",
 		TeamHead3:     "团",
-		TeamImg:       "http://localhost:8080/image?imageName=niuroumian",
+		TeamImg:       "http://192.168.0.104:8080/image?imageName=niuroumian",
 		FoodName:      "牛肉面",
-		TeamIcon:      "http://localhost:8080/image?imageName=icon",
+		TeamIcon:      "http://192.168.0.104:8080/image?imageName=icon",
 		TeamHotelName: "丰瑞餐厅",
 		TeamPersons:   "2人团",
 		TeamPrice:     "5.4",
@@ -354,9 +354,9 @@ func RushHandler(c *gin.Context) {
 		TeamHead1:     "时",
 		TeamHead2:     "秒",
 		TeamHead3:     "杀",
-		TeamImg:       "http://localhost:8080/image?imageName=rush",
+		TeamImg:       "http://192.168.0.104:8080/image?imageName=rush",
 		FoodName:      "肥牛丼套餐1份",
-		TeamIcon:      "http://localhost:8080/image?imageName=icon",
+		TeamIcon:      "http://192.168.0.104:8080/image?imageName=icon",
 		TeamHotelName: "熊吞大碗丼",
 		TeamPersons:   "2人团",
 		TeamPrice:     "32.8",
@@ -398,6 +398,100 @@ func GuessHandler(c *gin.Context) {
 		"items": items,
 	})
 
+}
+
+func SameCityHandler(c *gin.Context) {
+	items1 := []model.SameCity{
+		model.SameCity{
+			Id:        "643075b6-13eb-4ba0-a6e9-a46d61017943",
+			Title:     "1917电影",
+			PhotoAddr: "http://192.168.0.104:8080/image?imageName=douyin001",
+			Distance:  "8.6km",
+			AvatarUrl: "http://192.168.0.104:8080/image?imageName=60",
+			Location:  "北京市",
+			Random:    9,
+			Desc:      "1917年，第一次世界大战进入最激烈之际，两个年仅16岁的英国士兵接到的命令，需立即赶往死亡前线，向那里的将军传达一个“立刻停止进攻”讯息。 ",
+		},
+		model.SameCity{
+			Id:        "be4b27db-85ea-447a-882c-e777aaee0f7e",
+			Title:     "寄生虫",
+			PhotoAddr: "http://192.168.0.104:8080/image?imageName=douyin002",
+			Distance:  ">10km",
+			AvatarUrl: "http://192.168.0.104:8080/image?imageName=61",
+			Location:  "北京市三里屯通盈中心洲际酒店",
+			Random:    5,
+			Desc:      "就这样，基宇来到了朴社长（李善均 饰）家中，并且见到了他的太太（赵汝贞 饰），没过多久，基宇的妹妹和父母也如同寄生虫一般的进入了朴社长家里工作。",
+		},
+		model.SameCity{
+			Id:        "fbd35e30-3734-4e88-9a85-bc5a063653b8",
+			Title:     "",
+			PhotoAddr: "http://192.168.0.104:8080/image?imageName=douyin003",
+			Distance:  "8.6km",
+			AvatarUrl: "http://192.168.0.104:8080/image?imageName=21",
+			Location:  "北京市",
+			Random:    8,
+			Desc:      "基宇（崔宇植 饰）出生在一个贫穷的家庭之中，和妹妹基婷（朴素丹 饰）以及父母在狭窄的地下室里过着相依为命的日子。",
+		},
+		model.SameCity{
+			Id:        "a7caf770-2d7f-4615-98a1-612e3cc48c2b",
+			Title:     "",
+			PhotoAddr: "http://192.168.0.104:8080/image?imageName=douyin004",
+			Distance:  "5.6km",
+			AvatarUrl: "http://192.168.0.104:8080/image?imageName=80",
+			Location:  "北京市",
+			Random:    20,
+			Desc:      "一天，基宇的同学上门拜访，他告诉基宇，自己在一个有钱人家里给他们的女儿做家教，太太是一个头脑简单出手又阔绰的女人，因为自己要出国留学，所以将家教的职位暂时转交给基宇。",
+		},
+	}
+	items2 := []model.SameCity{
+		model.SameCity{
+			Id:        "96e3624b-1b98-46a2-9278-cc544bfcc3cc",
+			Title:     "",
+			PhotoAddr: "http://192.168.0.104:8080/image?imageName=douyin005",
+			Distance:  "7.4km",
+			AvatarUrl: "http://192.168.0.104:8080/image?imageName=42",
+			Location:  "北京市",
+			Random:    16,
+			Desc:      "然而，他们的野心并没有止步于此，基宇更是和大小姐坠入了爱河。随着时间的推移，朴社长家里隐藏的秘密渐渐浮出了水面。",
+		},
+		model.SameCity{
+			Id:        "4cf14f39-9a06-46f5-b5db-0eb154f38366",
+			Title:     "",
+			PhotoAddr: "http://192.168.0.104:8080/image?imageName=douyin006",
+			Distance:  "6.6km",
+			AvatarUrl: "http://192.168.0.104:8080/image?imageName=51",
+			Location:  "北京市",
+			Random:    4,
+			Desc:      "电影改编自世界名著《小妇人》，由奥斯卡提名最佳导演格雷塔.葛伟格执导，直击当代女性困惑。",
+		},
+		model.SameCity{
+			Id:        "7ebfa315-1e53-4fb0-ba16-d3992fc72135",
+			Title:     "",
+			PhotoAddr: "http://192.168.0.104:8080/image?imageName=douyin007",
+			Distance:  "6.0km",
+			AvatarUrl: "http://192.168.0.104:8080/image?imageName=50",
+			Location:  "北京市",
+			Random:    5,
+			Desc:      "作为2020年颁奖季热门，影片聚齐两代神仙阵容“世纪大同框”——金球奖最佳女主“伯德小姐”西尔莎·罗南与屡获提名的超人气演员“甜茶”再度携手诠释错过的真爱，“赫敏”艾玛·沃森与“黑寡妇师妹”弗洛伦斯·皮尤联袂呈现手足情深，三获奥斯卡的老戏骨梅尔·斯特里普与四次金球奖得主劳拉·邓恩倾力加盟。导演葛伟格用细腻又颇具新意的叙事手法，为这部经典文学名作带来充满活力的现代风格。",
+		},
+		model.SameCity{
+			Id:        "a782ccaa-43c8-420d-b0a2-5c089d450a6c",
+			Title:     "",
+			PhotoAddr: "http://192.168.0.104:8080/image?imageName=douyin008",
+			Distance:  "9.6km",
+			AvatarUrl: "http://192.168.0.104:8080/image?imageName=60",
+			Location:  "北京市",
+			Random:    9,
+			Desc:      "《爱尔兰人》为马丁·斯科塞斯执导的传奇巨制，罗伯特·德尼罗、阿尔·帕西诺和乔·佩西主演。通过二战老兵弗兰克·希兰的视角，讲述了战后美国有组织犯罪的故事。",
+		},
+	}
+	items := model.SameCityItems{
+		Items1: items1,
+		Items2: items2,
+	}
+	c.JSON(http.StatusOK, gin.H{
+		"items": items,
+	})
 }
 
 func ImageHandler(c *gin.Context) {

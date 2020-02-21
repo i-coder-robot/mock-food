@@ -27,5 +27,7 @@ func main() {
 
 	r.GET("/me",handler.MeHandler)
 
+	r.GET("/dySameCity",handler.SameCityHandler)
+
 	r.Run()
 }
